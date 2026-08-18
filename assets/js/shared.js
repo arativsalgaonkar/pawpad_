@@ -351,7 +351,7 @@ function Marquee({ items }) {
       `));
 }
 const WA_NUMBER = "918885349267";
-const WA_MESSAGE = "Hii! 🐾 I saw your website and wanted to ask about your services for my pet.";
+const WA_MESSAGE = "Hello, I would like to know more about your services.";
 function WhatsAppFloat() {
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
     "a",

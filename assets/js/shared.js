@@ -351,7 +351,6 @@ function Marquee({ items }) {
       `));
 }
 const WA_NUMBER = "919663077496";
-const WhatsAppIcon = ({ size = 26 }) => /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 32 32", width: size, height: size, fill: "currentColor", "aria-hidden": "true" }, /* @__PURE__ */ React.createElement("path", { d: "M16.02 3C9.4 3 4 8.4 4 15.02c0 2.65.87 5.1 2.35 7.09L4.9 29l7.09-1.84a11.9 11.9 0 0 0 4.03.7h.01c6.62 0 12.02-5.4 12.02-12.03C28.05 8.4 22.65 3 16.02 3zm0 21.86h-.01a9.85 9.85 0 0 1-5.02-1.37l-.36-.21-4.2 1.09 1.12-4.09-.24-.42a9.86 9.86 0 0 1-1.5-5.23c0-5.45 4.44-9.89 9.9-9.89 2.65 0 5.13 1.03 7.01 2.9a9.83 9.83 0 0 1 2.9 7.01c0 5.45-4.45 9.89-9.9 9.89h-.01zm5.42-7.41c-.3-.15-1.75-.87-2.02-.96-.27-.1-.47-.15-.66.15-.2.3-.76.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.24-.46-2.36-1.47a8.86 8.86 0 0 1-1.63-2.03c-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.18-.24-.58-.48-.5-.66-.5h-.56c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z" }));
 function WhatsAppFloat() {
   return /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(
     "a",
@@ -362,8 +361,7 @@ function WhatsAppFloat() {
       className: "wa-float hover-zone",
       "aria-label": "Chat with Pawpad on WhatsApp"
     },
-    /* @__PURE__ */ React.createElement("span", { className: "wa-ring", "aria-hidden": "true" }),
-    /* @__PURE__ */ React.createElement(WhatsAppIcon, { size: 26 }),
+    /* @__PURE__ */ React.createElement("img", { src: "assets/img/whatsapp-paw.png", alt: "Chat with Pawpad on WhatsApp", draggable: "false" }),
     /* @__PURE__ */ React.createElement("span", { className: "wa-tip desktop-only" }, "Chat on WhatsApp")
   ), /* @__PURE__ */ React.createElement("style", null, `
         .wa-float {
@@ -371,27 +369,16 @@ function WhatsAppFloat() {
           right: clamp(16px, 3vw, 28px);
           bottom: calc(clamp(16px, 3vw, 28px) + env(safe-area-inset-bottom, 0px));
           z-index: 40;
-          width: 58px; height: 58px;
-          border-radius: 50%;
+          width: 68px; height: 68px;
           display: inline-flex; align-items: center; justify-content: center;
-          background: var(--driftwood);
-          color: var(--white);
-          box-shadow: 0 14px 30px -12px color-mix(in oklab, var(--ink), transparent 45%);
-          transition: transform var(--t-fast) var(--ease), background var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+          filter: drop-shadow(0 12px 20px color-mix(in oklab, var(--ink), transparent 60%));
+          transition: transform var(--t-fast) var(--ease), filter var(--t-fast) var(--ease);
         }
-        .wa-float:hover { background: var(--driftwood-deep); transform: translateY(-3px); }
-        .wa-ring {
-          position: absolute; inset: 0; border-radius: 50%;
-          border: 1px solid var(--driftwood);
-          opacity: 0;
-          animation: waPulse 2.6s var(--ease) infinite;
-          pointer-events: none;
+        .wa-float:hover {
+          transform: translateY(-3px);
+          filter: drop-shadow(0 16px 26px color-mix(in oklab, var(--ink), transparent 50%));
         }
-        body[data-motion="still"] .wa-ring { display: none; }
-        @keyframes waPulse {
-          0% { transform: scale(1); opacity: .55; }
-          100% { transform: scale(1.55); opacity: 0; }
-        }
+        .wa-float img { width: 100%; height: 100%; object-fit: contain; display: block; -webkit-user-drag: none; }
         .wa-tip {
           position: absolute; right: calc(100% + 12px); top: 50%;
           transform: translateY(-50%) translateX(6px);
@@ -403,7 +390,7 @@ function WhatsAppFloat() {
         }
         .wa-float:hover .wa-tip { opacity: 1; transform: translateY(-50%) translateX(0); }
         @media (max-width: 700px) {
-          .wa-float { width: 52px; height: 52px; }
+          .wa-float { width: 56px; height: 56px; }
         }
       `));
 }
